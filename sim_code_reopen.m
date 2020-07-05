@@ -12,7 +12,7 @@ figure(2)
 startday = 5:5:20;
 % endday = 50:10:80;
 % startday = 10;
-endday = 70;
+endday = 30;
 % for day = endday
 for seir = 1:4
     
@@ -20,8 +20,8 @@ f=waitbar(0,'SEIR');
 
 global From To T_measures
 
-From = 1; % stupid mistake here, From has to be always 1
-To = 100;
+From = 1; 
+To = 200;
 T_measures = [startday(seir) endday 100];
 
 simRound=100;

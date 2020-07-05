@@ -16,7 +16,7 @@ yP=0.40; % estimated youth/student proportion(<25) Cnesus gives up to <18 (~20%)
 global From To
 
 % set parameters
-b = 0.8; % probability of transmission, 95% CI [0.05068, 0.05429]
+b = 0.5; % probability of transmission, 95% CI [0.05068, 0.05429]
 % kids_e_i
 k = [30*kids_e_i 30 10]; % k = average # people exposed to by infected ppl
 beta = k.*b; % infection rate, parameterize beta=k*b
@@ -24,7 +24,8 @@ incubation = 8;
 delta = [kids_e_i/(incubation) 1/incubation 1/incubation]; % exposed -> infected rate, i.e. 1/incubation period
 rec = 21; %three weeks to recover
 gam = [1/rec 1/rec 1/rec]; % recover rate, 1/recovery period
-alpha = [0.005 0.10 0.15]/5; % death rate
+alpha_proba = [0.0005 0.005 0.1]; % death probability
+alpha = alpha_proba .* gam ./ (1 - alpha_proba);
 
 % %---- test
 % % set parameters

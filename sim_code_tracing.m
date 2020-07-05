@@ -22,10 +22,10 @@ f=waitbar(0,'SEIR');
 
 global From To
 
-From = 1; % stupid mistake here, From has to be always 1
+From = 1; 
 To = 200;
 
-simRound=100;
+simRound=2;
 sCum=zeros(simRound,To-From+1,3);
 iCum=zeros(simRound,To-From+1,3);
 ieCum=zeros(simRound,To-From+1,3);

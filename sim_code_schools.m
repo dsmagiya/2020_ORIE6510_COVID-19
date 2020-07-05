@@ -12,7 +12,7 @@ tic
 figure()
 
 kids_e_i = [1 0.5 0.25 0.01];
-kids = ["as susceptible as adults" "50% as susceptible" "25% as susceptible" "immune"];
+kids = {'as susceptible as adults' '50% as susceptible' '25% as susceptible' 'immune'};
 % startday = 5:5:20;
 % endday = 50:10:80;
 % startday = 10;
@@ -25,10 +25,10 @@ f=waitbar(0,'SEIR');
 
 global From To
 
-From = 1; % stupid mistake here, From has to be always 1
+From = 1; 
 To = 60;
 
-simRound=100;
+simRound=2;
 sCum=zeros(simRound,To-From+1,3);
 iCum=zeros(simRound,To-From+1,3);
 ieCum=zeros(simRound,To-From+1,3);
@@ -95,7 +95,7 @@ xlabel('Calender Time');
 ylabel('Number of People');
 %legend('Infected','Susceptible','Internally Exposed','Externally Exposed','Recovered','Death');
 legend('Infected','Internally Exposed','Externally Exposed','Recovered','Death','Cumulative Infected');
-stitle = sprintf('SEIR-household-CTMC reopen schools: kids are %s', kids(seir));
+stitle = sprintf('SEIR-household-CTMC reopen schools: kids are %s', kids{seir});
 title(stitle)
 grid on;
 

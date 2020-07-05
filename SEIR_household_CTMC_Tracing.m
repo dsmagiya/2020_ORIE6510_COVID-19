@@ -22,14 +22,15 @@ global From To T_measures
 
 % set parameters
 radius = 2; % affected radius of an infected person, who are isloated along with him/her
-b = 0.08; % probability of transmission, 95% CI [0.05068, 0.05429]
+b = 0.05; % probability of transmission, 95% CI [0.05068, 0.05429]
 k = [30 30 10]*(1-testrate); % k = average # people exposed to by infected ppl
 beta = k.*b; % infection rate, parameterize beta=k*b
 incubation = 8;
 delta = [1/(100*incubation) 1/incubation 1/incubation]; % exposed -> infected rate, i.e. 1/incubation period
 rec = 21; %three weeks to recover
 gam = [1/rec 1/rec 1/rec]; % recover rate, 1/recovery period
-alpha = [0.00 0.10 0.15]/5; % death rate
+alpha_proba = [0.0005 0.005 0.1]; % death probability
+alpha = alpha_proba .* gam ./ (1 - alpha_proba);
 
 % initialize each group of people
 s = {yP*TN (1-eP-yP)*TN-1 eP*TN}; % susceptible
