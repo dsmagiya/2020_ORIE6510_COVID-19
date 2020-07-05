@@ -154,5 +154,5 @@ where $S(t)+E(t)+I(t)+R(t) = N(t)$
 [2]: https://www.cdc.gov/coronavirus/2019-ncov/hcp/faq.html	"Clinical Questions about COVID-19: Questions and Answers"
 [3]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7081172/	"The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application"
 
-
+%\alpha%
 
