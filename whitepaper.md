@@ -61,9 +61,7 @@ Therefore, here we propose a new SEIR model, where nodes represent households, a
 
 - infectious school children expose other school children with a rate $\beta_1 = k_1*b$ and infectious working adults expose other working adults with a rate $\beta_2 = k_3*b$ per unit time. If the elderly family members always stay at home, $k_3 = 0$, and thus they do not expose anyone. This simple external infection rate structure may be generalized.
 
-- Exposed individuals become infectious with a given rate $\delta$ (think of this as the incubation period of the virus.) For the Covid-19, the incubation period ranges from 2–14 days, the average being 5.1 days. <https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7081172/>
-
-  <https://www.cdc.gov/coronavirus/2019-ncov/hcp/faq.html>
+- Exposed individuals become infectious with a given rate $\delta$ (think of this as the incubation period of the virus.) For the Covid-19, the incubation period ranges from [2–14 days][2], the average being [5.1 days][3].
 
 - When externally exposed individuals become infectious, they internally expose all members of their household.
 
@@ -79,7 +77,7 @@ Therefore, here we propose a new SEIR model, where nodes represent households, a
 
 - The Markov process is:
 
-  *i will put a flow chart here*
+  ![flowchart](flowchart.png)
 
   
 
@@ -132,11 +130,29 @@ The effect of the 100%/50%/25% susceptiblity is subtle, probably because kids on
 ## Conclusion
 The table as follow summarizes our simulation results.
 |Scenario  | “Flatten the curve” (jumps in cases are smaller)|Reduce total infected (moves downwards)|Sensitive to|
-|------------ | ------------|------------- | ------------|
-|Tracing |?|?|?|
-|Reopening |?|?|?|
-|Reopening only schools|?|?|?|
+|:----------: | :----------:|:-----------: | :----------:|
+|Tracing |Yes|Yes|test rate Below or above 80%|
+|Reopening |Yes|No?|?|
+|Reopening only schools|Yes|Yes|Susceptibility approaching zero|
 
 ## Appendix
 
-*Here i will put the ODE's*
+The standard [SEIR][1] model:
+
+$$
+\frac {dS(t)}{dt} = -\beta \frac {S(t)I(t)}{N(t)}\\
+\frac {dE(t)}{dt} = \beta \frac {S(t)I(t)}{N(t)} - \delta E(t)\\
+\frac {dI(t)}{dt} = \delta E(t)-\gamma I(t)-\alpha I(t)\\
+\frac {dR(t)}{dt} = \gamma I(t)
+$$
+
+where $S(t)+E(t)+I(t)+R(t) = N(t)$
+
+
+
+[1]: https://link.springer.com/book/10.1007/978-3-319-21554-9	"Stochastic Population and Epidemic Models"
+[2]: https://www.cdc.gov/coronavirus/2019-ncov/hcp/faq.html	"Clinical Questions about COVID-19: Questions and Answers"
+[3]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7081172/	"The Incubation Period of Coronavirus Disease 2019 (COVID-19) From Publicly Reported Confirmed Cases: Estimation and Application"
+
+
+
