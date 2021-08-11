@@ -1,3 +1,5 @@
+<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
+
 # ORIE 6510 - Probability – COVID-19 simulations
 Date: 2020/5/8
 Author:
