@@ -1,5 +1,3 @@
-<img src="https://render.githubusercontent.com/render/math?math=e^{i \pi} = -1">
-
 # ORIE 6510 - Probability – COVID-19 simulations
 Date: 2020/5/8
 Author:
@@ -71,8 +69,7 @@ Therefore, here we propose a new SEIR model, where nodes represent households, a
 
 - To summarize, the parameters we have are:
 
-
-  - $ $\vec k$ = ($k_1$ $k_2$ $k_3$) $
+  -  $\vec k$ = ($k_1$ $k_2$ $k_3$)
   - $b$
   - $\vec \beta$ = ($\beta_1$ $\beta_2$ $ \beta_3$) = $\vec k.*b$
   - $\vec \gamma$ = ($\gamma_1$ $\gamma_2$ $\gamma_3$)
