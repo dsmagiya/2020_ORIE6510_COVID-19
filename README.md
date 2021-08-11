@@ -69,13 +69,13 @@ Therefore, here we propose a new SEIR model, where nodes represent households, a
 
 - To summarize, the parameters we have are:
 
-$$
-  - $\vec k$ = ($k_1$ $k_2$ $k_3$)
+
+  - $ $\vec k$ = ($k_1$ $k_2$ $k_3$) $
   - $b$
   - $\vec \beta$ = ($\beta_1$ $\beta_2$ $ \beta_3$) = $\vec k.*b$
   - $\vec \gamma$ = ($\gamma_1$ $\gamma_2$ $\gamma_3$)
   - $\vec \alpha$ = ($\alpha_1$ $\alpha_2$ $\alpha_3$)
-$$
+
 - The Markov process is:
 
   ![flowchart](flowchart.png)
